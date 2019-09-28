@@ -1,6 +1,6 @@
 FROM resin/rpi-raspbian:jessie
 
-ARG SNAPCASTVERSION
+ARG SNAPCASTVERSION=v0.14.0
 
 RUN apt-get update && apt-get install wget -y
 

@@ -2,7 +2,7 @@ FROM resin/rpi-raspbian:jessie
 
 RUN apt-get update && apt-get install wget -y
 
-ARG SNAPCASTVERSION
+ARG SNAPCASTVERSION=v0.14.0
 
 RUN wget https://github.com/badaix/snapcast/releases/download/v${SNAPCASTVERSION}/snapserver_${SNAPCASTVERSION}_armhf.deb
 
