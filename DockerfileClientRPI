@@ -1,12 +1,12 @@
 FROM resin/rpi-raspbian:jessie
 
-ARG SNAPCASTVERSION=v0.14.0
+ARG VERSION=0.14.0
 
 RUN apt-get update && apt-get install wget -y
 
-RUN wget https://github.com/badaix/snapcast/releases/download/v${SNAPCASTVERSION}/snapclient_${SNAPCASTVERSION}_armhf.deb
+RUN wget https://github.com/badaix/snapcast/releases/download/v${VERSION}/snapclient_${VERSION}_armhf.deb
 
-RUN dpkg -i --force-all snapclient_${SNAPCASTVERSION}_armhf.deb
+RUN dpkg -i --force-all snapclient_${VERSION}_armhf.deb
 RUN apt-get -f install -y
 
 RUN apt-get update && apt-get install alsa-base alsa-utils -y
