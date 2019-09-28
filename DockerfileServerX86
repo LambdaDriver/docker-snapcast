@@ -1,10 +1,10 @@
-FROM ubuntu:latest
+FROM debian:latest
 
 RUN apt-get update && apt-get install wget -y
 
-ARG VERSION=0.14.0
+ENV VERSION=0.14.0
 
-RUN wget 'https://github.com/badaix/snapcast/releases/download/v${VERSION}/snapserver_${VERSION}_amd64.deb'
+RUN wget "https://github.com/badaix/snapcast/releases/download/v${VERSION}/snapserver_${VERSION}_amd64.deb"
 
 RUN dpkg -i --force-all 'snapserver_${VERSION}_amd64.deb'
 RUN apt-get -f install -y

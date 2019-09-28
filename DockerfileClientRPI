@@ -1,10 +1,10 @@
-FROM resin/rpi-raspbian:jessie
+FROM debian:latest
 
-ARG VERSION=0.14.0
+ENV VERSION=0.14.0
 
 RUN apt-get update && apt-get install wget -y
 
-RUN wget https://github.com/badaix/snapcast/releases/download/v${VERSION}/snapclient_${VERSION}_armhf.deb
+RUN wget "https://github.com/badaix/snapcast/releases/download/v${VERSION}/snapclient_${VERSION}_armhf.deb"
 
 RUN dpkg -i --force-all snapclient_${VERSION}_armhf.deb
 RUN apt-get -f install -y
